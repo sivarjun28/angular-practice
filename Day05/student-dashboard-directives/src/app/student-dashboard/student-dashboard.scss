@@ -19,8 +19,6 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Button */
-
 button {
   display: block;
   margin: 0 auto 30px;
@@ -121,19 +119,3 @@ h3 {
   font-size: 22px;
 }
 
-
-@media (max-width: 768px) {
-
-  .dashboard-container {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  .student-card {
-    padding: 18px;
-  }
-}
