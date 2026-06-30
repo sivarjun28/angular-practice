@@ -1,0 +1,22 @@
+<div class="dashboard">
+    <h2>LIVE DASHBOARD</h2>
+
+    <ng-container *ngIf="stats$ | async as stats">
+        <app-stats-card title="Users" [value]="stats.users">
+
+        </app-stats-card>
+        <app-stats-card title="Sales" [value]="stats.sales">
+
+        </app-stats-card>
+        <app-stats-card title="Products" [value]="stats.products">
+
+        </app-stats-card>
+        <app-stats-card title="Orders" [value]="stats.orders">
+
+        </app-stats-card>
+        <app-stats-card title="Customers" [value]="stats.customers">
+
+        </app-stats-card>
+
+    </ng-container>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>🌐 API Integration Practice</h1>
+    <button (click)="loadUsers()">
+        Fetch Users
+    </button>
+    @if(loading){
+    <p>Loading users...</p>
+    }
+    @if(error){
+    <div class="error">
+        {{error}}
+    </div>
+    }
+
+    @for(user of users;track user.id){
+    <div class="card">
+        <h3>{{user.name}}</h3>
+        <p>{{user.email}}</p>
+        <p>{{user.phone}}</p>
+    </div>
+    }
+    x
+</div>

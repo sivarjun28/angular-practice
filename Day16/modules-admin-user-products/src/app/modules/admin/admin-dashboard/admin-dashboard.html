@@ -1,0 +1,84 @@
+<div class="admin-dashboard">
+
+  <h1>Admin Dashboard</h1>
+
+  <p class="module-info">
+    🚀 This module is <strong>lazy-loaded</strong>
+  </p>
+
+  <nav class="admin-nav">
+    <a routerLink="/admin/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+
+    <a routerLink="/admin/users" routerLinkActive="active">
+      Users
+    </a>
+
+    <a routerLink="/admin/settings" routerLinkActive="active">
+      Settings
+    </a>
+  </nav>
+
+  <div class="stats-grid">
+
+    <div
+      class="stat-card"
+      *ngFor="let stat of stats"
+      [style.border-left-color]="stat.color">
+
+      <div class="stat-icon">
+        {{ stat.icon }}
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ stat.value | number }}</h3>
+        <p>{{ stat.label }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="activity-section">
+
+    <h2>Recent Activities</h2>
+
+    <ul class="activity-list">
+
+      <li
+        *ngFor="let activity of recentActivities"
+        class="activity-item">
+
+        <span class="activity-dot"></span>
+
+        {{ activity }}
+
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div class="info-box">
+
+    <h3>About Lazy Loading</h3>
+
+    <p>
+      This Admin Module is loaded only when the user
+      navigates to the Admin section.
+    </p>
+
+    <p><strong>Benefits:</strong></p>
+
+    <ul>
+      <li>Faster application startup</li>
+      <li>Smaller main bundle size</li>
+      <li>Better performance</li>
+      <li>Feature-based architecture</li>
+      <li>Scalable enterprise applications</li>
+    </ul>
+
+  </div>
+
+</div>

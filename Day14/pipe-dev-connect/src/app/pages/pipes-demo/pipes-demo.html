@@ -1,0 +1,162 @@
+<div class="demo-container">
+    <h1>🔄 Angular Pipes Playground</h1>
+
+    <section class="section">
+
+        <h2>📅 Formatting Essentials</h2>
+
+        <div class="example-card">
+
+            <p>
+                <strong>Current Date:</strong>
+                {{ today | date:'fullDate' }}
+            </p>
+
+            <p>
+                <strong>Compact Date:</strong>
+                {{ today | date:'short' }}
+            </p>
+
+            <p>
+                <strong>Product Price:</strong>
+                {{ price | currency:'USD' }}
+            </p>
+
+            <p>
+                <strong>Price (INR):</strong>
+                {{ price | currency:'INR' }}
+            </p>
+
+            <p>
+                <strong>Completion Rate:</strong>
+                {{ completion | percent }}
+            </p>
+
+            <p>
+                <strong>Large Number:</strong>
+                {{ largeNumber | number }}
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <h2>🔤 Text Transformation Lab</h2>
+
+        <div class="example-card">
+
+            <p>
+                <strong>Original:</strong>
+                {{ title }}
+            </p>
+
+            <p>
+                <strong>Uppercase:</strong>
+                {{ title | uppercase }}
+            </p>
+
+            <p>
+                <strong>Lowercase:</strong>
+                {{ title | lowercase }}
+            </p>
+
+            <p>
+                <strong>Title Case:</strong>
+                {{ title | titlecase }}
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+        <h2>📦 JSON & Slice Pipe</h2>
+
+        <div class="example-card">
+            <h3>User Object</h3>
+            <pre>{{ user | json}}</pre>
+            <h3>First 3 products</h3>
+            <pre>
+                {{ products | slice:0:3 | json}}
+            </pre>
+        </div>
+
+    </section>
+
+    <section class="section">
+        <h2>🛠 Filter Pipe Workshop</h2>
+
+        <input type="text" placeholder="search products" [(ngModel)] = "searchText">
+
+        <div class="product-grid">
+            <div class="product-card" *ngFor = "let product of products | filter:searchText">
+                <h3>{{ product.name }}</h3>
+
+                <p>Category: {{ product.category }}</p>
+
+                <p>Price: {{ product.price }}</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section">
+        <h2>📞 Phone Formatter Pipe</h2>
+
+        <div class="example-card">
+            <p>
+                <strong>Raw Number:</strong>
+                {{ phone }}
+            </p>
+
+            <p>
+                <strong>Formatted</strong>
+
+                {{ phone | phone}}
+            </p>
+
+            <input type="text" [(ngModel)] = "phone" placeholder="Enter Phone number">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>⛓ Pipe Chaining Playground</h2>
+        <div class="example-card">
+            <p>
+                <strong>
+                    Name → Uppercase → Slice:
+                </strong>
+
+                {{ title | uppercase | slice:0:12 }}
+            </p>
+
+            <p>
+                <strong>Date → Uppercase:</strong>
+                {{ today | date:'fullDate' | uppercase }}
+            </p>
+
+            <p>
+                <strong>Currency:</strong>
+                {{ price | currency: 'USD' | uppercase}}
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+         <h2>Highlight Pipe (Highlight Search Terms)</h2>
+          <div class="example-card">
+             <label>Search Text:</label>
+
+             <input type="text" [(ngModel)] = "highlightText" placeholder="Enter text to highlight...">
+
+             <h3>Original text</h3>
+             <p>{{ description }}</p>
+
+             <h3>Highlighted Result</h3>
+             <p [innerHTML] = "description | highlight : highlightText"> </p>
+          </div>
+    </section>
+</div>

@@ -1,0 +1,28 @@
+.container {
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.update-btn {
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-weight:bold ;
+}
+.update-btn:hover{
+    background-color: beige;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}

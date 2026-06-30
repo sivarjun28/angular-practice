@@ -1,0 +1,25 @@
+<h1>Profile</h1>
+
+<div class="profile-card">
+
+    <h2>{{user.name}}</h2>
+
+    <p>{{user.designation}}</p>
+
+    <p>{{user.email}}</p>
+
+    <p>{{user.experience}}</p>
+
+    <h3>Skills</h3>
+
+    <ul>
+
+        @for(skill of user.skills; track skill){
+
+        <li>{{skill}}</li>
+
+        }
+
+    </ul>
+
+</div>

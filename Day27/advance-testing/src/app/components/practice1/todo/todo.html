@@ -1,0 +1,25 @@
+<div class="todo-container">
+  <h2>📝 Todo App</h2>
+
+  <div class="input-section">
+    <input #input placeholder="Enter todo">
+    <button (click)="add(input.value);input.value=''">Add</button>
+  </div>
+
+  <ul>
+    @for(todo of todos();track todo.id){
+
+    <li>
+      <span (click)="toggle(todo.id)" [style.textDecoration]="todo.completed ? 'line-through' : 'none'">
+        {{todo.title}}
+      </span>
+
+      <button class="delete-btn" (click)="delete(todo.id)">
+        ✖
+      </button>
+    </li>
+
+    }
+  </ul>
+
+</div>

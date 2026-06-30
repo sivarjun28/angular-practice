@@ -1,0 +1,25 @@
+<div class="trending-section">
+
+    <h2>
+        🔥 Trending Today
+    </h2>
+
+    <div class="trending-grid">
+
+        <div class="trend-box" *ngFor="
+                let movie of trendingMovies
+            ">
+
+            <img [src]="movie.image" [alt]="movie.title">
+
+            <h3>
+                {{ movie.title }}
+            </h3>
+
+            <p>
+                {{ movie.description }}
+            </p>
+
+        </div>
+
+    </div>

@@ -1,0 +1,45 @@
+<div class="container">
+
+    <h1>
+
+        Infinite Scroll
+
+    </h1>
+
+    <div *ngFor="let product of products" class="card">
+
+        <img [src]="product.thumbnail" />
+
+        <h3>
+
+            {{ product.title }}
+
+        </h3>
+
+        <p>
+
+            {{ product.description }}
+
+        </p>
+
+        <p>
+
+            ₹ {{ product.price }}
+
+        </p>
+
+    </div>
+
+    <div *ngIf="loading" class="loading">
+
+        Loading...
+
+    </div>
+
+    <div *ngIf="error" class="error">
+
+        {{ error }}
+
+    </div>
+
+</div>

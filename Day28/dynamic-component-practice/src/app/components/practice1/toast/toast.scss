@@ -1,0 +1,22 @@
+.toast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 8px;
+  border-radius: 6px;
+  color: white;
+  min-width: 250px;
+}
+
+.success { background: #28a745; }
+.error { background: #dc3545; }
+.warning { background: #ffc107; color: black; }
+.info { background: #17a2b8; }
+
+button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}

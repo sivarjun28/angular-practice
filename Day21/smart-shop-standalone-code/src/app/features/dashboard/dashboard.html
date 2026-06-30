@@ -1,0 +1,39 @@
+<div class="dashboard">
+
+    <h1>Dashboard</h1>
+
+    <p>Welcome user 👋</p>
+
+    <div class="card-container">
+
+        @for(item of dashboardData; track item.title){
+
+        <div class="card">
+
+            <h3>{{item.title}}</h3>
+
+            <h2>{{item.count}}</h2>
+
+        </div>
+
+        }
+
+    </div>
+
+    <div class="activity">
+
+        <h2>Recent Activities</h2>
+
+        <p>✓ Created Todo task</p>
+
+        <p>✓ Added new product</p>
+
+        <p>✓ Published blog post</p>
+
+        <p>✓ Updated profile</p>
+
+        <p>✓ Logged in successfully</p>
+
+    </div>
+
+</div>

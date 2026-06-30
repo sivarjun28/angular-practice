@@ -1,0 +1,105 @@
+<div class="container">
+
+    <h1>Employee Analytics</h1>
+
+    <div class="filters">
+
+        <select (change)="onDepartmentChange($event)">
+
+            <option value="" disabled selected>
+
+                Select Department
+
+            </option>
+
+            <option value="1">
+
+                IT
+
+            </option>
+
+            <option value="2">
+
+                HR
+
+            </option>
+
+            <option value="3">
+
+                Finance
+
+            </option>
+
+        </select>
+
+        <select (change)="onDateChange($event)">
+
+            <option value="" disabled selected>
+
+                Select Range
+
+            </option>
+
+            <option value="7">
+
+                7 Days
+
+            </option>
+
+            <option value="30">
+
+                30 Days
+
+            </option>
+
+            <option value="90">
+
+                90 Days
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <div *ngIf="loading" class="loading">
+
+        Loading...
+
+    </div>
+
+    <div *ngIf="error" class="error">
+
+        {{ error }}
+
+    </div>
+
+    <div *ngIf="analytics" class="card">
+
+        <p>
+
+            Total Employees:
+
+            {{ analytics.totalEmployees }}
+
+        </p>
+
+        <p>
+
+            Active Employees:
+
+            {{ analytics.activeEmployees }}
+
+        </p>
+
+        <p>
+
+            Total Projects:
+
+            {{ analytics.totalProjects }}
+
+        </p>
+
+    </div>
+
+</div>

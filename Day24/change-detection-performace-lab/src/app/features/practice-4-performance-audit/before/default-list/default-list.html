@@ -1,0 +1,12 @@
+<h2>Default (Slow)</h2>
+
+<button (click)="addItem()">Add Item</button>
+
+<p>Completed: {{ completedCount }}</p>
+
+<div *ngFor="let item of items" class="item">
+    <span [class.done]="item.completed">
+        {{ item.name }}
+    </span>
+    <button (click)="toggle(item)">Toggle</button>
+</div>

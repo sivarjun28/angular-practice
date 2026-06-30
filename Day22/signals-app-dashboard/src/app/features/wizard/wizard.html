@@ -1,0 +1,33 @@
+<h1>Multi Step Wizard</h1>
+
+<div class="wizard-container">
+
+    <h3>
+        Progress:
+        {{progress()}}%
+    </h3>
+    <div *ngIf="currentStep()===1">
+        <input placeholder="Name" [value]="name()" (input)="name.set($any($event.target).value)">
+    </div>
+    <div *ngIf="currentStep()===2">
+
+        <input placeholder="City" [value]="city()" (input)="city.set($any($event.target).value)">
+    </div>
+    <div *ngIf="currentStep()===3">
+        <input placeholder="Skill" [value]="skill()" (input)="skill.set($any($event.target).value)">
+    </div>
+    <div *ngIf="currentStep()===4">
+        <h3>Review</h3>
+        <p>Name: {{name()}}</p>
+        <p>City: {{city()}}</p>
+        <p>Skill: {{skill()}}</p>
+    </div>
+    <div class="buttons">
+        <button (click)="previousStep()">
+            Previous
+        </button>
+        <button (click)="nextStep()">
+            Next
+        </button>
+    </div>
+</div>

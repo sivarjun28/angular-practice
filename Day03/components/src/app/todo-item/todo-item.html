@@ -1,0 +1,75 @@
+<div class="todo-container">
+
+  <h1>Advanced Todo List</h1>
+
+  <div class="add-todo">
+
+    <input
+      type="text"
+      [(ngModel)]="newTodo"
+      placeholder="Add new todo"
+    />
+
+    <button (click)="addTodo()">
+      Add
+    </button>
+
+  </div>
+
+  <div
+    class="todo-item"
+    *ngFor="let todo of todos; let i = index"
+  >
+
+    <div class="left-section">
+
+      <input
+        type="checkbox"
+        [(ngModel)]="todo.completed"
+      />
+
+      <span
+        *ngIf="!todo.isEditing"
+        [class.completed]="todo.completed"
+      >
+        {{ todo.text }}
+      </span>
+
+      <input
+        *ngIf="todo.isEditing"
+        type="text"
+        [(ngModel)]="todo.text"
+      />
+
+    </div>
+
+    <div class="actions">
+
+      <button
+        *ngIf="!todo.isEditing"
+        class="edit-btn"
+        (click)="editTodo(todo)"
+      >
+        Edit
+      </button>
+
+      <button
+        *ngIf="todo.isEditing"
+        class="save-btn"
+        (click)="saveTodo(todo)"
+      >
+        Save
+      </button>
+
+      <button
+        class="delete-btn"
+        (click)="deleteTodo(i)"
+      >
+        Delete
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

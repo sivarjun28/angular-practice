@@ -1,0 +1,75 @@
+<div class="app-layout">
+
+
+  <aside class="sidebar">
+
+    <h1 class="logo">
+      🎬 StreamBox
+    </h1>
+
+    <nav>
+
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/movies"
+        routerLinkActive="active-link"
+      >
+        Movies
+      </a>
+
+      <a
+        routerLink="/trending"
+        routerLinkActive="active-link"
+      >
+        Trending
+      </a>
+
+      <a
+        routerLink="/watchlist"
+        routerLinkActive="active-link"
+      >
+        Watchlist
+      </a>
+
+      <a
+        routerLink="/profile"
+        routerLinkActive="active-link"
+      >
+        Profile
+      </a>
+
+      <a
+        routerLink="/settings"
+        routerLinkActive="active-link"
+      >
+        Settings
+      </a>
+      <a
+        routerLink="/not-found"
+        routerLinkActive="active-link"
+      >
+        Notfound
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <main class="content">
+
+    <router-outlet>
+    </router-outlet>
+
+  </main>
+
+</div>

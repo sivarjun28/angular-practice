@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>User Preferences</h2>
+
+  <div class="section">
+    <label>Theme:</label>
+    <button 
+      (click)="setTheme('light')" 
+      [class.active]="prefs.theme$() === 'light'">
+      Light
+    </button>
+
+    <button 
+      (click)="setTheme('dark')" 
+      [class.active]="prefs.theme$() === 'dark'">
+      Dark
+    </button>
+  </div>
+
+  <div class="section">
+    <label>Language:</label>
+    <select 
+      [value]="prefs.language$()" 
+      (change)="setLanguage($any($event.target).value)">
+      
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="kn">Kannada</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <label>
+      <input 
+        type="checkbox"
+        [checked]="prefs.notifications$()"
+        (change)="prefs.toggleNotifications()">
+      Enable Notifications
+    </label>
+  </div>
+
+  <div class="preview">
+    <p><strong>Theme:</strong> {{ prefs.theme$() }}</p>
+    <p><strong>Language:</strong> {{ prefs.language$() }}</p>
+    <p><strong>Notifications:</strong> {{ prefs.notifications$() ? 'ON' : 'OFF' }}</p>
+  </div>
+</div>

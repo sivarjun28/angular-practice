@@ -1,0 +1,18 @@
+<div *ngIf="tabs.length > 0" class="tab-header">
+
+  <div *ngFor="let tab of tabs"
+       class="tab-item"
+       [class.active]="tab.id === activeTabId">
+
+    <button (click)="selectTab(tab.id)">
+      {{ tab.title }}
+    </button>
+
+    <span (click)="closeTab(tab.id)" style="cursor:pointer;">❌</span>
+  </div>
+
+</div>
+
+<div *ngIf="activeTab" class="tab-content">
+  <ng-container *ngComponentOutlet="activeTab.component"></ng-container>
+</div>

@@ -1,0 +1,14 @@
+<h1>Real Time Search</h1>
+
+<div class="search-container">
+
+    <input type="text" placeholder="Search product" [value]="searchTerm()"
+        (input)="searchTerm.set($any($event.target).value)">
+
+    <div class="product" *ngFor="let product of filteredProducts()">
+
+        {{product}}
+
+    </div>
+
+</div>

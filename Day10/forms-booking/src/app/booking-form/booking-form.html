@@ -1,0 +1,69 @@
+<div class="form-container">
+    <h1>
+        🎬 Movie Ticket Booking
+    </h1>
+    <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
+        <label>
+            Name
+        </label>
+        <input type="text" name="name" [(ngModel)]="booking.name" required #name="ngModel">
+
+        <p class="error" *ngIf="name.invalid && name.touched">
+            Name is Required
+        </p>
+
+        <label>
+            Email
+        </label>
+
+        <input type="email" name="email" [(ngModel)]="booking.email" email required #email="ngModel">
+        <p class="error" *ngIf="email.invalid && email.touched">
+            Valid email required
+        </p>
+
+        <label>
+            Select Movie
+        </label>
+
+        <select name="movie" [(ngModel)]="booking.movie" required #movie="ngModel">
+            <option value="">Choose Movie</option>
+            <option *ngFor="let m of movies" [value]="m">{{ m }}</option>
+        </select>
+
+        <label>
+            Tickets
+        </label>
+        <input type="number" name="tickets" [(ngModel)]="booking.tickets" min="1" required>
+
+        <label>
+            Seat Type
+        </label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" value="Regular" name="seatType" [(ngModel)]="booking.seatType" required>
+                Regular
+            </label>
+
+            <label>
+                <input type="radio" value="Premium" name="seatType" [(ngModel)]="booking.seatType" required>
+                Premium
+            </label>
+        </div>
+
+        <label>
+            Message
+        </label>
+        <textarea name="message" [(ngModel)]="booking.message"></textarea>
+        <div class="checkbox">
+            <input type="checkbox" name="agree" [(ngModel)]="booking.agree" required>
+            <span>Accept Terms</span>
+        </div>
+
+        <button type="submit" [disabled]="!bookingForm.valid">
+            Book Tickets
+        </button>
+    </form>
+    <div class="success" *ngIf="submitted">
+        ✅ Booking Successful
+    </div>
+</div>

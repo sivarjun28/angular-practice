@@ -1,0 +1,80 @@
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <img [src]="profileImage" [alt]="username">
+
+        <h1>
+            {{ username }}
+        </h1>
+
+        <p class="bio">
+            {{ bio }}
+        </p>
+
+        <button (click)="toggleFollow()" [ngClass]="{
+                'follow-btn': !isFollowing,
+                'unfollow-btn': isFollowing
+            }">
+
+            {{
+            isFollowing
+            ? 'Following'
+            : 'Follow'
+            }}
+
+        </button>
+
+        <div class="stats">
+
+            <div class="stat-box">
+
+                <h2>{{ followers }}</h2>
+
+                <p>Followers</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>{{ following }}</h2>
+
+                <p>Following</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>{{ posts }}</h2>
+
+                <p>Posts</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="social-section">
+
+        <h2>
+            Social Links
+        </h2>
+
+        <div class="social-card" *ngFor="
+                let social of socialLinks
+            ">
+
+            <h3>
+                {{ social.platform }}
+            </h3>
+
+            <p>
+                {{ social.username }}
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+<h1>Signup Form</h1>
+
+<div class="signup-container">
+
+    <input type="text" placeholder="Username" [value]="username()" (input)="updateUsername($event)">
+
+    <input type="email" placeholder="Email" [value]="email()" (input)="updateEmail($event)">
+
+    <input type="password" placeholder="Password" [value]="password()" (input)="updatePassword($event)">
+
+    <input type="password" placeholder="Confirm Password" [value]="confirmPassword()"
+        (input)="updateConfirmPassword($event)">
+
+    <small *ngIf="!isEmailValid() && email()">
+
+        Invalid email
+
+    </small>
+
+    <small *ngIf="!isPasswordMatch() && confirmPassword()">
+
+        Passwords do not match
+
+    </small>
+
+    <button [disabled]="!isFormValid()" (click)="submitForm()">
+
+        Register
+
+    </button>
+
+</div>

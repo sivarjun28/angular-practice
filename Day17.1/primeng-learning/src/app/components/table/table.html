@@ -1,0 +1,135 @@
+<p-toast></p-toast>
+
+<div class="table-container">
+
+    <div class="page-header">
+        <h1>Employee Management Dashboard</h1>
+        <p>PrimeNG Advanced Table Demo</p>
+    </div>
+
+    <p-toolbar styleClass="mb-4">
+        <div class="p-toolbar-group-start">
+            <p-button label="Add Employee" icon="pi pi-plus">
+            </p-button>
+        </div>
+
+        <div class="p-toolbar-group-end">
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+
+                <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+                    placeholder="Search Employee">
+            </span>
+        </div>
+    </p-toolbar>
+
+    <p-table #dt [value]="employees" [paginator]="true" [rows]="5" [rowHover]="true" [globalFilterFields]="[
+            'name',
+            'department',
+            'designation',
+            'email'
+        ]" [tableStyle]="{'min-width':'70rem'}">
+
+        <ng-template pTemplate="header">
+
+            <tr>
+                <th pSortableColumn="id">
+                    ID
+                    <p-sortIcon field="id"></p-sortIcon>
+                </th>
+
+                <th pSortableColumn="name">
+                    Name
+                    <p-sortIcon field="name"></p-sortIcon>
+                </th>
+
+                <th pSortableColumn="department">
+                    Department
+                    <p-sortIcon field="department"></p-sortIcon>
+                </th>
+
+                <th>Designation</th>
+
+                <th pSortableColumn="salary">
+                    Salary
+                    <p-sortIcon field="salary"></p-sortIcon>
+                </th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+            </tr>
+
+        </ng-template>
+
+        <ng-template pTemplate="body" let-employee>
+
+            <tr>
+
+                <td>{{ employee.id }}</td>
+
+                <td>{{ employee.name }}</td>
+
+                <td>{{ employee.department }}</td>
+
+                <td>{{ employee.designation }}</td>
+
+                <td>{{ employee.salary | currency:'INR' }}</td>
+
+                <td>
+                    <p-tag [value]="employee.status" [severity]="getSeverity(employee.status)">
+                    </p-tag>
+                </td>
+
+                <td class="actions">
+
+                    <p-button icon="pi pi-pencil" severity="info" [rounded]="true" [text]="true"
+                        (onClick)="onEdit(employee)">
+                    </p-button>
+
+                    <p-button icon="pi pi-trash" severity="danger" [rounded]="true" [text]="true"
+                        (onClick)="onDelete(employee)">
+                    </p-button>
+
+                </td>
+
+            </tr>
+
+        </ng-template>
+
+        <ng-template pTemplate="rowexpansion" let-employee>
+
+            <tr>
+
+                <td colspan="7">
+
+                    <div class="expanded-content">
+
+                        <h3>{{ employee.name }}</h3>
+
+                        <p>
+                            <strong>Email:</strong>
+                            {{ employee.email }}
+                        </p>
+
+                        <p>
+                            <strong>Department:</strong>
+                            {{ employee.department }}
+                        </p>
+
+                        <p>
+                            <strong>Designation:</strong>
+                            {{ employee.designation }}
+                        </p>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </ng-template>
+
+    </p-table>
+
+</div>

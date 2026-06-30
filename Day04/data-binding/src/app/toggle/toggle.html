@@ -1,0 +1,68 @@
+<div class="container">
+
+  <h1>Toggle Component</h1>
+
+  <!-- Two Way Binding -->
+  <input
+    type="text"
+    [(ngModel)]="username"
+    placeholder="Enter username"
+  />
+
+  <p>
+    Character Count: {{ username.length }}
+  </p>
+
+  <!-- Event Binding -->
+  <button
+    (click)="toggleProfile()"
+    [style.backgroundColor]="showProfile ? 'crimson' : 'green'"
+  >
+    {{ showProfile ? 'Hide Profile' : 'Show Profile' }}
+  </button>
+
+  <!-- ngIf -->
+  <div
+    class="profile-card"
+    *ngIf="showProfile"
+  >
+
+    <!-- Property Binding -->
+    <img
+      [src]="profileImage"
+      [style.width.px]="imageSize"
+      [style.height.px]="imageSize"
+    />
+
+    <!-- Interpolation -->
+    <h2>{{ username }}</h2>
+
+    <p>{{ bio }}</p>
+
+    <!-- Dynamic Class -->
+    <p
+      [class.online]="isOnline"
+      [class.offline]="!isOnline"
+    >
+      {{ isOnline ? 'Online' : 'Offline' }}
+    </p>
+
+    <button (click)="toggleStatus()">
+      Toggle Status
+    </button>
+
+    <div class="size-buttons">
+
+      <button (click)="increaseImageSize()">
+        Increase Image
+      </button>
+
+      <button (click)="decreaseImageSize()">
+        Decrease Image
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

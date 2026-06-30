@@ -1,0 +1,53 @@
+<div class="cart-page">
+  <h1>🛒 Shopping Cart</h1>
+
+  @if (cart.items().length === 0) {
+
+    <div class="empty-cart">
+      <h2>Your cart is empty</h2>
+      <p>Add some products to continue shopping.</p>
+
+      <a routerLink="/products" class="shop-btn">
+        Continue Shopping
+      </a>
+    </div>
+
+  } @else {
+
+    <div class="cart-container">
+
+      <div class="cart-items">
+        @for (item of cart.items(); track item.id) {
+          <app-cart-item [item]="item"></app-cart-item>
+        }
+      </div>
+
+      <div class="summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>${{ cart.total() }}</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Tax</span>
+          <span>${{ cart.tax() }}</span>
+        </div>
+
+        <hr>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <span>${{ cart.total() + cart.tax() }}</span>
+        </div>
+
+        <a routerLink="/checkout" class="checkout-btn">
+          Proceed to Checkout
+        </a>
+      </div>
+
+    </div>
+
+  }
+</div>

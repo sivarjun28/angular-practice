@@ -1,0 +1,21 @@
+<h1>Settings</h1>
+<form [formGroup]="settingsForm" (ngSubmit)="saveSettings()">
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email">
+    </div>
+    <div>
+        <label>Theme</label>
+        <select formControlName="theme">
+            <option>Light</option>
+            <option>Dark</option>
+        </select>
+    </div>
+    <button type="submit">
+        Save
+    </button>
+</form>

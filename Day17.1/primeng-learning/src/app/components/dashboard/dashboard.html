@@ -1,0 +1,108 @@
+<div class="dashboard">
+
+  <div class="header">
+    <h1>Enterprise Dashboard</h1>
+    <p>
+      Experience a real-world dashboard with charts,
+      KPIs, statistics and reports.
+    </p>
+  </div>
+
+
+  <div class="kpi-grid">
+
+    <p-card>
+      <div class="kpi-card">
+        <h4>Total Revenue</h4>
+        <h2>₹12.5L</h2>
+        <p-tag value="+18%" severity="success"></p-tag>
+      </div>
+    </p-card>
+
+    <p-card>
+      <div class="kpi-card">
+        <h4>Total Users</h4>
+        <h2>2,845</h2>
+        <p-tag value="+12%" severity="info"></p-tag>
+      </div>
+    </p-card>
+
+    <p-card>
+      <div class="kpi-card">
+        <h4>Orders</h4>
+        <h2>1,245</h2>
+        <p-tag value="+8%" severity="success"></p-tag>
+      </div>
+    </p-card>
+
+    <p-card>
+      <div class="kpi-card">
+        <h4>Growth</h4>
+        <h2>24%</h2>
+        <p-tag value="Excellent" severity="warn"></p-tag>
+      </div>
+    </p-card>
+
+  </div>
+
+
+  <div class="chart-grid">
+
+    <p-card header="Revenue Trend">
+
+      <p-chart
+        type="line"
+        [data]="revenueChart"
+        [options]="chartOptions">
+      </p-chart>
+
+    </p-card>
+
+    <p-card header="Sales Distribution">
+
+      <p-chart
+        type="doughnut"
+        [data]="salesChart"
+        [options]="chartOptions">
+      </p-chart>
+
+    </p-card>
+
+  </div>
+
+
+  <div class="activity-grid">
+
+    <p-card header="Recent Activity">
+
+      <ul class="activity-list">
+        <li>New user registered</li>
+        <li>Order #1024 completed</li>
+        <li>Revenue updated</li>
+        <li>Monthly report generated</li>
+      </ul>
+
+    </p-card>
+
+    <p-card header="Project Status">
+
+      <div class="status-item">
+        <span>Angular Migration</span>
+        <p-progressBar [value]="90"></p-progressBar>
+      </div>
+
+      <div class="status-item">
+        <span>API Integration</span>
+        <p-progressBar [value]="75"></p-progressBar>
+      </div>
+
+      <div class="status-item">
+        <span>Testing</span>
+        <p-progressBar [value]="60"></p-progressBar>
+      </div>
+
+    </p-card>
+
+  </div>
+
+</div>

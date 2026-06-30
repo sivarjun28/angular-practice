@@ -1,0 +1,19 @@
+<div class="product-detail" *ngIf="product() as p">
+    <img [src]="p.image" [alt]="p.title">
+
+    <div class="details">
+        <h2>{{ p.title }}</h2>
+        <p class="price">{{ p.price | currencyFormat }}</p>
+        <p>{{ p.description }}</p>
+
+        <button (click)="addToCart(p)">Add to Cart</button>
+    </div>
+</div>
+
+@if (loading()) {
+<p>Loading...</p>
+}
+
+@if (error()) {
+<p>{{ error() }}</p>
+}

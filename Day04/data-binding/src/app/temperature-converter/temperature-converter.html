@@ -1,0 +1,44 @@
+<div
+  class="converter-card"
+  [class.hot]="celsius > 25"
+  [class.cold]="celsius <= 10"
+>
+
+  <h1>Temperature Converter</h1>
+
+  <div class="input-group">
+
+    <label>Celsius (°C)</label>
+
+    <input
+      type="number"
+      [(ngModel)]="celsius"
+      (input)="updateFromCelsius()"
+    />
+
+  </div>
+
+  <div class="input-group">
+
+    <label>Fahrenheit (°F)</label>
+
+    <input
+      type="number"
+      [(ngModel)]="fahrenheit"
+      (input)="updateFromFahrenheit()"
+    />
+
+  </div>
+
+  <div class="result">
+
+    <h2>{{ weatherStatus }}</h2>
+
+    <p>
+      {{ celsius }}°C =
+      {{ fahrenheit }}°F
+    </p>
+
+  </div>
+
+</div>

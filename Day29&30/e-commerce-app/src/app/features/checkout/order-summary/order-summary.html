@@ -1,0 +1,19 @@
+<div class="summary" *ngIf="order() as order;">
+
+    <h2>Order Summary</h2>
+
+    @for (item of order.items; track item.id) {
+    <div class="summary-item">
+        <span>{{ item.title }} x {{ item.quantity }}</span>
+        <span>₹{{ item.price * item.quantity }}</span>
+    </div>
+    }
+
+    <hr>
+
+    <p>Subtotal: ₹{{ order.subtotal }}</p>
+    <p>Tax: ₹{{ order.tax }}</p>
+
+    <h3>Total: ₹{{ order.total }}</h3>
+
+</div>

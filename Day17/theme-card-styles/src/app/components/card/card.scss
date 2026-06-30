@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    border: 2px solid #ddd;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+}
+:host-context(.blue){
+  border-color:blue;
+}
+:host-context(.dark){
+  border-color:blue;
+}
+
+h3 {
+    color: #1976d2;
+}

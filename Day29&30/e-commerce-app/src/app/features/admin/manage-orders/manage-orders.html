@@ -1,0 +1,8 @@
+<h2>Manage Orders</h2>
+
+<ul>
+    <li *ngFor="let o of orders()">
+        Order #{{ o.id }} - {{ o.user }} - ${{ o.total }}
+        <button (click)="deleteOrder(o.id)">Delete</button>
+    </li>
+</ul>

@@ -1,0 +1,11 @@
+<h1 id="noteForm">Notes Form</h1>
+<input [(ngModel)]="title" placeholder="Title" />
+<textarea [(ngModel)]="content" placeholder="Content"></textarea>
+
+<select [(ngModel)]="category">
+    <option value="">Select Category</option>
+    <option value="work">Work</option>
+    <option value="personal">Personal</option>
+</select>
+
+<button (click)="addNote()">Add Note</button>

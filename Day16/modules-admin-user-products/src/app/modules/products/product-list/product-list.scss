@@ -1,0 +1,13 @@
+.product-section{min-height:100vh;padding:30px;background:linear-gradient(135deg,#e3f2fd,#fce4ec);font-family:Segoe UI,sans-serif}
+.product-section h1{text-align:center;color:#2c3e50;margin-bottom:5px}
+.module-note{text-align:center;color:#666;margin-bottom:25px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1000px;margin:0 auto 30px}
+.product-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.1);transition:.3s;display:flex;flex-direction:column;gap:8px}
+.product-card:hover{transform:translateY(-5px)}
+.product-card h3{margin:0;color:#2c3e50}
+.product-card p{margin:0;color:#555;font-size:14px}
+.view-btn{text-decoration:none;margin-top:10px;padding:10px;border-radius:8px;background:#3498db;color:#fff;text-align:center;font-weight:500;transition:.3s}
+.view-btn:hover{background:#2c80b4;transform:scale(1.05)}
+.learning-box{max-width:800px;margin:0 auto;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.learning-box p{color:#555;margin-bottom:10px}
+.learning-box ul{padding-left:20px;color:#444}

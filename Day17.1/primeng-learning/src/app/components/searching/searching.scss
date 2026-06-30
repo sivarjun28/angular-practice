@@ -1,0 +1,139 @@
+.search-page {
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.search-page h1 {
+  color: #1e293b;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.search-page p {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.table-wrapper {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 10px 20px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+:host ::ng-deep .p-inputtext {
+  width: 300px;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+:host ::ng-deep .p-input-icon-left i {
+  margin-top: -0.5rem;
+  color: #64748b;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+  background: #0f172a;
+  color: white;
+  padding: 1rem;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr {
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr:hover {
+  background: #f1f5f9;
+  transform: scale(1.002);
+}
+
+:host ::ng-deep .p-datatable-striped .p-datatable-tbody>tr:nth-child(even) {
+  background: #fafafa;
+}
+
+:host ::ng-deep .p-sortable-column-icon {
+  color: #cbd5e1;
+}
+
+:host ::ng-deep .p-paginator {
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-page,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-prev {
+  border-radius: 8px;
+}
+
+:host ::ng-deep .p-tag {
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.35rem 0.8rem;
+}
+
+:host ::ng-deep .p-tag-success {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+  border: 1px solid #22c55e;
+}
+
+:host ::ng-deep .p-tag-warn {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #f59e0b;
+}
+
+:host ::ng-deep .p-tag-danger {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+  border: 1px solid #ef4444;
+}
+.upload-container {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  border: 2px dashed #3b82f6;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.upload-container h3 {
+  margin: 0;
+  color: #1e293b;
+}
+
+.upload-container p {
+  color: #64748b;
+  margin: 10px 0 20px;
+}
+
+:host ::ng-deep .p-fileupload-basic-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+:host ::ng-deep .p-fileupload-basic{
+  gap: 20px;
+}

@@ -1,0 +1,91 @@
+.user-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px;
+    margin-bottom: 24px;
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #4f46e5);
+
+    border-radius: 16px;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.user-info p {
+    margin-top: 6px;
+    opacity: 0.9;
+}
+
+.login-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-section input {
+    width: 250px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #1f2937;
+}
+
+.login-btn {
+    background: white;
+    color: #2563eb;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #f8fafc;
+}
+
+.logout-btn {
+    background: #ef4444;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+.welcome-text {
+    font-size: 18px;
+    font-weight: 600;
+}

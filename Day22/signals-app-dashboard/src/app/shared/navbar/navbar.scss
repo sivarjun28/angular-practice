@@ -1,0 +1,31 @@
+.navbar{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:16px 30px;
+ background:#2563eb;
+ color:white;
+}
+
+.logo{
+ font-size:22px;
+ font-weight:600;
+}
+
+ul{
+ display:flex;
+ gap:20px;
+ list-style:none;
+}
+
+a{
+ color:white;
+ text-decoration:none;
+ padding:8px 12px;
+ border-radius:6px;
+}
+
+.active{
+ background:white;
+ color:#2563eb;
+}

@@ -1,0 +1,50 @@
+<div class="article-container">
+    <section class="article">
+        <h1>Breaking News: Angular Defer is Powerful 🚀</h1>
+        <p>
+            Angular introduced defer blocks to improve performance by lazy loading sections.
+            This helps applications load faster and improves user experience.
+        </p>
+    </section>
+
+    @defer (on viewport) {
+    <section class="comments">
+        <h2>Comments (on viewport)</h2>
+        <div *ngFor="let comment of comments">
+            <p>{{ comment }}</p>
+        </div>
+    </section>
+    }
+    @placeholder {
+    <p>Loading comments...</p>
+    }
+
+    @defer(on idle){
+    <section class="recommended">
+        <h2>Recommendations (on idle)</h2>
+        <div *ngFor="let recommend of recommendations">
+            <p>{{ recommend }}</p>
+        </div>
+    </section>
+    }@placeholder{
+    <p>Losing recommendations...</p>
+    }
+
+    <div class="share-wrapper">
+
+        <button #shareBtn>Share Article</button>
+
+        @defer (on interaction(shareBtn)) {
+        <div class="social">
+            <p>Share on:</p>
+            <button>Facebook</button>
+            <button>Twitter</button>
+            <button>LinkedIn</button>
+        </div>
+        }
+        @placeholder {
+        <p>Click to load sharing options</p>
+        }
+
+    </div>
+</div>

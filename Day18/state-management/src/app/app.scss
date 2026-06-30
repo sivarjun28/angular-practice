@@ -1,0 +1,13 @@
+.dashboard-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background:
+        radial-gradient(circle at top left, #60a5fa33, transparent 30%),
+        radial-gradient(circle at top right, #a78bfa33, transparent 30%),
+        radial-gradient(circle at bottom left, #34d39922, transparent 30%),
+        #f8fafc;
+
+    border-radius: 20px;
+}

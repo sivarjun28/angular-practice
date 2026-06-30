@@ -1,0 +1,55 @@
+<div class="admin-container">
+
+    <header>
+
+        <h1>
+
+            🛡️ Admin Panel
+
+        </h1>
+
+        <p>
+
+            Welcome {{adminName}}
+
+        </p>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card" *ngFor="let item of stats">
+
+            <h2>
+
+                {{item.icon}}
+
+            </h2>
+
+            <h3>
+
+                {{item.value}}
+
+            </h3>
+
+            <p>
+
+                {{item.title}}
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <div class="buttons">
+
+        <button (click)="goDashboard()">
+
+            Dashboard
+
+        </button>
+
+    </div>
+
+</div>

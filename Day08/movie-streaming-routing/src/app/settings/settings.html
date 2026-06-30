@@ -1,0 +1,67 @@
+<div
+    class="settings-container"
+
+    [ngClass]="{
+        'dark-theme': darkMode
+    }"
+>
+
+    <h1>
+        ⚙ Settings
+    </h1>
+
+    <div class="setting-card">
+
+        <h3>Dark Mode</h3>
+
+        <button
+            (click)="toggleTheme()"
+        >
+
+            {{
+                darkMode
+                ? 'Enabled'
+                : 'Disabled'
+            }}
+
+        </button>
+
+    </div>
+
+    <div class="setting-card">
+
+        <h3>Notifications</h3>
+
+        <input
+            type="checkbox"
+
+            [(ngModel)]="notifications"
+        >
+
+    </div>
+
+    <div class="setting-card">
+
+        <h3>Auto Play</h3>
+
+        <input
+            type="checkbox"
+
+            [(ngModel)]="autoPlay"
+        >
+
+    </div>
+
+    <div class="setting-card">
+
+        <h3>Username</h3>
+
+        <input
+            type="text"
+
+            [(ngModel)]="username"
+        >
+
+    </div>
+
+</div>

@@ -1,0 +1,161 @@
+<div class="container">
+
+  <div class="header">
+
+    <h1>Post Management System</h1>
+
+    <button class="refresh-btn" (click)="fetchPosts()">
+      Refresh Posts
+    </button>
+
+  </div>
+
+  <!-- CREATE / UPDATE FORM -->
+
+  <div class="form-card">
+
+    <h2>
+      {{ editingPostId ? 'Update Post' : 'Create Post' }}
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Enter post title"
+      [(ngModel)]="newPost.title"
+    />
+
+    <textarea
+      rows="5"
+      placeholder="Enter post content"
+      [(ngModel)]="newPost.body"
+    ></textarea>
+
+    <div class="form-buttons">
+
+      <button
+        class="create-btn"
+        *ngIf="!editingPostId"
+        (click)="createPost()"
+      >
+        Create Post
+      </button>
+
+      <button
+        class="update-btn"
+        *ngIf="editingPostId"
+        (click)="updatePost()"
+      >
+        Update Post
+      </button>
+
+      <button
+        class="cancel-btn"
+        *ngIf="editingPostId"
+        (click)="cancelEdit()"
+      >
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- SEARCH -->
+
+  <div class="search-section">
+
+    <input
+      type="text"
+      placeholder="Search posts by title..."
+      [(ngModel)]="searchText"
+      (input)="searchPosts()"
+    />
+
+  </div>
+
+  <!-- LOADING -->
+
+  <div *ngIf="loading" class="loading">
+
+    Loading posts...
+
+  </div>
+
+  <!-- ERROR -->
+
+  <div *ngIf="error" class="error">
+
+    {{ error }}
+
+    <button (click)="retry()">
+      Retry
+    </button>
+
+  </div>
+
+  <!-- EMPTY -->
+
+  <div
+    *ngIf="
+      !loading &&
+      !error &&
+      filteredPosts.length === 0
+    "
+    class="empty"
+  >
+
+    No posts found
+
+  </div>
+
+  <!-- POSTS -->
+
+  <div
+    class="posts-grid"
+    *ngIf="
+      !loading &&
+      !error &&
+      filteredPosts.length > 0
+    "
+  >
+
+    <div
+      class="post-card"
+      *ngFor="let post of filteredPosts"
+    >
+
+      <div class="card-top">
+
+        <span class="user-badge">
+          User {{ post.userId }}
+        </span>
+
+      </div>
+
+      <h2>{{ post.title }}</h2>
+
+      <p>{{ post.body }}</p>
+
+      <div class="card-buttons">
+
+        <button
+          class="edit-btn"
+          (click)="editPost(post)"
+        >
+          Edit
+        </button>
+
+        <button
+          class="delete-btn"
+          (click)="deletePost(post.id)"
+        >
+          Delete
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="product-section">
+
+  <h1>Product Catalog</h1>
+
+  <p class="module-note">
+    📦 Products Module loaded using Lazy Loading
+  </p>
+
+  <div class="product-grid">
+
+    <div
+      class="product-card"
+      *ngFor="let product of products">
+
+      <h3>{{ product.name }}</h3>
+
+      <p>
+        <strong>Category:</strong>
+        {{ product.category }}
+      </p>
+
+      <p>
+        <strong>Price:</strong>
+        ₹{{ product.price }}
+      </p>
+
+      <p>
+        <strong>Available Stock:</strong>
+        {{ product.stock }}
+      </p>
+
+      <a
+        [routerLink]="['/product', product.id]"
+        class="view-btn">
+
+        View Details
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="learning-box">
+
+    <p>
+      The Products Module is loaded only when users
+      navigate to the Products section. Product details
+      use route parameters such as:
+    </p>
+
+    <ul>
+      <li>/product/1</li>
+      <li>/product/2</li>
+      <li>/product/3</li>
+    </ul>
+
+  </div>
+
+</div>

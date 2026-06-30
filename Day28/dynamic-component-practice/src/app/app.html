@@ -1,0 +1,53 @@
+<div class="background">
+
+    <app-toast-container></app-toast-container>
+
+    <h1>🚀 Angular Practice - Dynamic Components</h1>
+
+    <div class="toast-section">
+        <h2>🔔 Notification Demo</h2>
+        <p>
+            Click buttons below to trigger different toast notifications.
+        </p>
+
+        <div class="btn-group">
+            <button (click)="showSuccess()" class="toast-btn success">
+                ✅ Success
+            </button>
+
+            <button (click)="showError()" class="toast-btn error">
+                ❌ Error
+            </button>
+
+            <button (click)="showWarning()" class="toast-btn warning">
+                ⚠️ Warning
+            </button>
+
+            <button (click)="showInfo()" class="toast-btn info">
+                ℹ️ Info
+            </button>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="tabs-section">
+        <h2>📑 Dynamic Tabs Demo</h2>
+        <p>
+            Add tabs dynamically and load components at runtime.
+        </p>
+
+        <div class="btn-group">
+            <button (click)="addTab1()">➕ Add Tab 1</button>
+            <button (click)="addTab2()">➕ Add Tab 2</button>
+        </div>
+
+        <app-tab-container></app-tab-container>
+    </div>
+    <div class="tabs-section">
+        <app-widget-dashboard></app-widget-dashboard>
+    </div>
+    <div class="tabs-section">
+        <app-widget-step></app-widget-step>
+    </div>
+</div>

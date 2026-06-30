@@ -1,0 +1,41 @@
+<div class="cart-container">
+    <h1>🛒 Shopping Cart</h1>
+    <div class="cart-card" *ngFor="let item of cartService.cartItems()">
+        <div>
+
+            <h3>{{ item.name }}</h3>
+
+            <p>₹{{ item.price }}</p>
+
+        </div>
+        <input type="number" [value]="item.quantity"
+            (change)="cartService.updateQuantity(item.id, $any($event.target).value)">
+
+        <button class="remove-btn" (click)="cartService.removeFromCart(item.id)">
+            Remove
+        </button>
+    </div>
+    <div class="summary">
+
+        <h2>Order Summary</h2>
+
+        <p>Total: ₹{{ cartService.total() }}</p>
+
+        <p>Items: {{ cartService.itemsCount() }}</p>
+        <input type="text" placeholder="Coupon" (input)="couponCode.set($any($event.target).value)">
+        <button (click)="applyCoupon()">
+
+            Apply Coupon
+
+        </button>
+        <p *ngIf="discountTotal() !== null">
+
+            Discounted Total:
+
+            ₹{{ discountTotal() }}
+        </p>
+        <button class="clear-btn" (click)="cartService.clearCart()">
+            Clear Cart
+        </button>
+    </div>
+</div>

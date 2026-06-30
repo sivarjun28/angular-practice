@@ -1,0 +1,13 @@
+.control-center{min-height:100vh;padding:30px;background:linear-gradient(135deg,#e3f2fd,#fce4ec);font-family:Segoe UI,sans-serif}
+.control-center h1{text-align:center;color:#2c3e50;margin-bottom:5px}
+.page-path{text-align:center;color:#777;margin-bottom:30px}
+.config-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1000px;margin:0 auto 30px}
+.config-box{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.1);transition:.3s;display:flex;flex-direction:column;justify-content:space-between}
+.config-box:hover{transform:translateY(-5px)}
+.config-box h3{margin:0 0 10px;color:#2c3e50}
+.config-box p{margin:0 0 15px;color:#555;font-size:14px}
+.action-btn{border:none;padding:10px;border-radius:8px;background:#3498db;color:#fff;font-weight:500;cursor:pointer;transition:.3s}
+.action-btn:hover{background:#2c80b4;transform:scale(1.05)}
+.learning-section{max-width:800px;margin:0 auto;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.learning-section h3{margin-bottom:10px;color:#2c3e50}
+.learning-section p{color:#555}

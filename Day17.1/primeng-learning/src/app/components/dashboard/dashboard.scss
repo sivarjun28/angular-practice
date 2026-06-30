@@ -1,0 +1,126 @@
+.dashboard {
+  padding: 2rem;
+  background: #f4f7fb;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin-bottom: .5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.kpi-card h4 {
+  margin-bottom: .5rem;
+  font-size: .95rem;
+  opacity: .9;
+}
+
+.kpi-card h2 {
+  margin-bottom: .75rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.kpi-grid .p-card:nth-child(1) {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.kpi-grid .p-card:nth-child(2) {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.kpi-grid .p-card:nth-child(3) {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.kpi-grid .p-card:nth-child(4) {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.activity-list {
+  padding-left: 1rem;
+}
+
+.activity-list li {
+  margin-bottom: .75rem;
+  color: #334155;
+}
+
+.status-item {
+  margin-bottom: 1rem;
+}
+
+.status-item span {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+:host ::ng-deep .p-chart {
+  height: 300px;
+}
+
+:host ::ng-deep .p-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: none;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+:host ::ng-deep .p-card-body {
+  padding: 1.5rem;
+}
+
+:host ::ng-deep .p-progressbar {
+  height: 10px;
+  border-radius: 999px;
+}

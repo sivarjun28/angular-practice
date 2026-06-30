@@ -1,0 +1,38 @@
+<h1 class="page-title">
+    ⭐ My Watchlist
+</h1>
+
+<div *ngIf="
+    watchlistService
+    .getWatchlist()
+    .length === 0
+  " class="empty-box">
+
+    No movies added yet
+
+</div>
+
+<div class="watchlist-grid">
+
+    <div class="watch-card" *ngFor="
+      let movie of
+      watchlistService
+      .getWatchlist()
+    ">
+
+        <img [src]="movie.image">
+
+        <h2>{{ movie.title }}</h2>
+
+        <p>{{ movie.category }}</p>
+
+        <button (click)="
+        watchlistService
+        .removeMovie(movie.id)
+      ">
+            Remove
+        </button>
+
+    </div>
+
+</div>

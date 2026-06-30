@@ -1,0 +1,40 @@
+<div class="search-container">
+    <div class="search-card">
+        <h1>Advanced Employee Search</h1>
+        <p class="subtitle">
+            Search Employee by name
+        </p>
+
+        <div class="search-box?">
+            <input type="text" placeholder="search employees...." (input)="onSearch($event)" />
+        </div>
+
+        <div class="loading" *ngIf="loading">
+            Searching....
+        </div>
+        <div class="error" *ngIf="error">
+            {{ error }}
+        </div>
+
+        <div class="empty" *ngIf="!loading && !error && results.length === 0">
+            Start typing to Search
+        </div>
+
+        <div class="results" *ngIf="results.length > 0">
+            <div class="employee-card" *ngFor="let employee of results">
+                <img [src]="employee.image" [alt]="employee.firstname " />
+                <div class="employee-info">
+                    <h3>
+                        {{ employee.firstname}}
+                        {{ employee.lastname}}
+                    </h3>
+                    <p>{{ employee.email }}</p>
+                    <p>{{ employee.company.name }}</p>
+                    <p>{{ employee.address.city }},
+                        {{employee.address.country}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

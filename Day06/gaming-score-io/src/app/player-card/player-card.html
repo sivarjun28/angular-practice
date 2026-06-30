@@ -1,0 +1,25 @@
+<div class="player-card">
+
+  <h2>{{ playerName }}</h2>
+
+  <h1>{{ score }}</h1>
+
+  <div class="buttons">
+
+    <button
+      class="minus"
+      (click)="decreaseScore()"
+    >
+      -
+    </button>
+
+    <button
+      class="plus"
+      (click)="increaseScore()"
+    >
+      +
+    </button>
+
+  </div>
+
+</div>  

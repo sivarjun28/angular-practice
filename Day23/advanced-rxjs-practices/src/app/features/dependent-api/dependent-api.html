@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>
+        Dependent API Calls
+    </h1>
+    <div *ngIf="loading" class="loading">
+        Loading...
+    </div>
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+    <div *ngIf="!loading && user" class="card">
+        <h2>User</h2>
+        <p>
+            {{ user.name }}
+        </p>
+    </div>
+    <div *ngIf="company" class="card">
+        <h2>Company</h2>
+        <p>
+            {{ company.companyName }}
+        </p>
+    </div>
+    <div *ngIf="location" class="card">
+        <h2>Location</h2>
+        <p>
+            {{ location.city }}
+            ,
+            {{ location.country }}
+        </p>
+    </div>
+</div>

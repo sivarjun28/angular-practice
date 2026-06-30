@@ -1,0 +1,18 @@
+
+<div class="favorites-container">
+<h2 class="favorite-card">Favorite Tasks ⭐</h2>
+
+<div *ngIf="(favoriteTasks$ | async)?.length === 0">
+    No Favorite Tasks
+</div>
+
+<div *ngFor="let task of favoriteTasks$ | async">
+
+    <strong>{{ task.title }}</strong>
+
+    -
+
+    {{ task.priority }}
+
+</div>
+</div>

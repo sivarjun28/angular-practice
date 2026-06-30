@@ -1,0 +1,66 @@
+<div class="search-page">
+
+  <h1>📊 Search & File Management</h1>
+  <p>
+    Explore PrimeNG DataTable and FileUpload with a clean enterprise UI.
+  </p>
+
+  <div class="table-wrapper">
+    <p-table #dt [value]="products" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+      [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['name', 'category', 'status']"
+      styleClass="p-datatable-sm p-datatable-striped">
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+              placeholder="Search products..." />
+          </span>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="name">Product Name <p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
+          <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
+          <th pSortableColumn="stock">Stock <p-sortIcon field="stock"></p-sortIcon></th>
+          <th pSortableColumn="rating">Rating <p-sortIcon field="rating"></p-sortIcon></th>
+          <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>${{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.rating }} ⭐</td>
+          <td>
+            <p-tag [value]="product.status" [severity]="getStatusSeverity(product.status)"></p-tag>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+ <div class="upload-container">
+  <div class="upload-icon">
+    <i class="pi pi-cloud-upload"></i>
+  </div>
+
+  <h3>Upload Files</h3>
+  <p>Drag and drop files here or click to browse</p>
+
+  <p-fileUpload
+      mode="basic"
+      chooseLabel="Select Files"
+      [multiple]="true"
+      accept=".pdf,.doc,.docx,.xlsx,.csv,.png,.jpg">
+  </p-fileUpload>
+</div>
+</div>

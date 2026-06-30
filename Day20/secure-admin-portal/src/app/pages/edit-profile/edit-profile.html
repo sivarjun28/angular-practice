@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Edit Profile</h1>
+    <div class="card">
+        <div class="field">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="profile.name">
+        </div>
+
+        <div class="field">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="profile.email">
+        </div>
+        <div class="field">
+            <label>Phone</label>
+            <input type="text" [(ngModel)]="profile.phone"> 
+        </div>
+        <div class="field">
+            <label>City</label>
+            <input type="text" [(ngModel)]="profile.city">
+        </div>
+        <button class="save-button" (click)="saveProfile()">Save</button>
+        <button class="dashboard-btn" (click)="goDashboard()">Go to Dashboard</button>
+    </div>
+</div>

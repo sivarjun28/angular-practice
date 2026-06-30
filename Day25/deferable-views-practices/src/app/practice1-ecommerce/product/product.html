@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="product">
+        <h1>{{product.name}}</h1>
+        <p>Price: ${{ product.price }}</p>
+        <p>{{ product.description }}</p>
+    </div>
+
+    @defer (on viewport){
+    <div class="section">
+        <h2>Reviews (Intersection Observer)</h2>
+        <div *ngFor="let review of reviews">
+            <b>{{ review.user }}</b>: {{ review.comment }}
+        </div>
+    </div>
+    } @placeholder{
+    <p>scroll to load reviews....</p>
+    } @loading{
+    <p>loading reviews</p>
+    }
+
+    @defer (on idle){
+    <div class="section">
+        <h2>Related Products (Browser idle time)</h2>
+        <ul>
+            <li *ngFor="let item of relatedProducts">
+                {{ item }}
+
+            </li>
+        </ul>
+    </div>
+    } @placeholder{
+    <p>Loading recommendations....</p>
+    }
+    @defer (on viewport) {
+    <div class="section">
+        <h2>Q & A</h2>
+        <div *ngFor="let q of questions">
+            <p><b>Q: </b>{{ q.question }}</p>
+            <p><b>Ans: </b>{{ q.answer }}</p>
+
+        </div>
+    </div>
+    }@placeholder {
+    <p>Scroll to load Q&A...</p>
+    }
+</div>

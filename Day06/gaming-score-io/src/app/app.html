@@ -1,0 +1,32 @@
+<div class="dashboard">
+
+  <h1>🎮 Gaming Score Dashboard</h1>
+
+  <h2>
+    Total Team Score:
+    {{ totalScore }}
+  </h2>
+
+  <div class="players-container">
+
+    <app-player-card
+
+      *ngFor="
+        let player of players;
+        let i = index
+      "
+
+      [playerName]="player.name"
+
+      [score]="player.score"
+
+      (scoreChanged)="
+        updateScore(i, $event)
+      "
+
+    >
+    </app-player-card>
+
+  </div>
+
+</div>

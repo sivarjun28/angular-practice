@@ -1,0 +1,52 @@
+<div class="todo-container">
+
+  <h1>Todo Input Practice</h1>
+
+
+  <div class="input-section">
+
+    <input
+      type="text"
+      [(ngModel)]="task"
+      placeholder="Enter task"
+      (keyup.enter)="addTask()"
+    />
+
+    <button
+      (click)="addTask()"
+      [disabled]="!task.trim()"
+    >
+      Add
+    </button>
+
+  </div>
+
+
+  <p class="task-count">
+    Total Tasks: {{ tasks.length }}
+  </p>
+
+
+  <p *ngIf="tasks.length === 0">
+    No tasks added yet.
+  </p>
+
+
+  <ul>
+
+    <li *ngFor="let item of tasks">
+      {{ item }}
+    </li>
+
+  </ul>
+
+
+  <button
+    class="clear-btn"
+    *ngIf="tasks.length > 0"
+    (click)="clearTasks()"
+  >
+    Clear All
+  </button>
+
+</div>

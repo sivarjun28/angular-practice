@@ -1,0 +1,31 @@
+h2 {
+    color: #f0422b;
+}
+
+button {
+    margin: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0422b;
+    color: white;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color:#f0422b;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}

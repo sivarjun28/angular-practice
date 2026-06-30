@@ -1,0 +1,89 @@
+<div class="dashboard-container">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="stats-cards">
+
+        <div class="card">
+            <h3>Total Users</h3>
+            <p>{{ stats.totalUsers }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Users</h3>
+            <p>{{ stats.activeUsers }}</p>
+        </div>
+
+        <div class="card">
+            <h3>New Users</h3>
+            <p>{{ stats.newUsers }}</p>
+        </div>
+
+    </div>
+
+    @defer (on idle) {
+    <div class="dashboard-section">
+
+        <h2>User Analytics</h2>
+
+        <p-chart
+            type="line"
+            [data]="chartData">
+        </p-chart>
+
+    </div>
+    } @placeholder {
+    <p>Loading charts...</p>
+    }
+
+    @defer (on viewport) {
+    <div class="dashboard-section">
+
+        <h2>Users List</h2>
+
+        <p-table [value]="users">
+
+            <ng-template pTemplate="header">
+
+                <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                </tr>
+
+            </ng-template>
+
+            <ng-template pTemplate="body" let-user>
+
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.role }}</td>
+                </tr>
+
+            </ng-template>
+
+        </p-table>
+
+    </div>
+    } @placeholder {
+    <p>Scroll to load users...</p>
+    }
+
+    @defer (when isAdmin) {
+    <div class="dashboard-section">
+
+        <h2>Admin Tools</h2>
+
+        <div class="admin-tools">
+
+            <button>Delete User</button>
+
+            <button>Ban User</button>
+
+        </div>
+
+    </div>
+    } @placeholder {
+    <p>Checking permissions...</p>
+    }
+
+</div>

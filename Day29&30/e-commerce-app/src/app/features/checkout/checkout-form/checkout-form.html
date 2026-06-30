@@ -1,0 +1,27 @@
+<div class="checkout-page">
+  <h1>Checkout</h1>
+
+  <div class="checkout-container">
+
+    <div class="checkout-form">
+      <h2>Shipping Details</h2>
+
+      <label>Name</label>
+      <input [(ngModel)]="name" placeholder="Enter name" />
+
+      <label>Address</label>
+      <textarea [(ngModel)]="address"></textarea>
+
+      <label>Payment Method</label>
+      <select [(ngModel)]="payment">
+        <option value="cod">Cash on Delivery</option>
+        <option value="card">Card</option>
+      </select>
+
+      <button (click)="placeOrder()">Place Order</button>
+    </div>
+
+    <app-order-summary></app-order-summary>
+
+  </div>
+</div>

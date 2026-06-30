@@ -1,0 +1,17 @@
+<div class="products-container">
+    <h1>🛍️ Products</h1>
+    <div class="products-grid">
+        <div
+            class="product-card"
+            *ngFor="let product of products">
+
+            <h3>{{ product.name }}</h3>
+
+            <p>₹{{ product.price }}</p>
+
+            <button (click)="add(product)">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>

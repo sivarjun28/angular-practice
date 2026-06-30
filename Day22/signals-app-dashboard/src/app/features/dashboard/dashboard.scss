@@ -1,0 +1,38 @@
+h1 {
+    text-align: center;
+    margin: 30px;
+}
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+    padding: 30px;
+}
+
+.card {
+
+    border: 1px solid #ddd;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    transition: .3s;
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+}

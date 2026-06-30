@@ -1,0 +1,33 @@
+h2{
+text-align:center;
+color:#1e293b;
+margin:40px 0 30px;
+font-size:32px;
+font-weight:700;
+}
+
+.admin-links{
+width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.admin-links a{
+text-decoration:none;
+background:#2563eb;
+color:#fff;
+padding:16px;
+text-align:center;
+border-radius:12px;
+font-size:18px;
+font-weight:600;
+transition:.3s;
+box-shadow:0 8px 20px rgba(37,99,235,.2);
+}
+
+.admin-links a:hover{
+background:#1d4ed8;
+transform:translateY(-3px);
+}

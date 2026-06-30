@@ -1,0 +1,42 @@
+<div class="dashboard">
+    <div class="form-section">
+        <h1> 🎬 Movie Dashboard</h1>
+
+        <input type="text" placeholder="Movie Title" [(ngModel)]="movieData.title">
+        <textarea placeholder="Movie Description" [(ngModel)]="movieData.body"></textarea>
+        <button *ngIf="!editMode" (click)="addMovie()">
+            Add Movie
+        </button>
+
+        <button *ngIf="editMode" class="update-btn" (click)="updateMovie()">
+            Update Movie
+        </button>
+
+
+    </div>
+
+    <div class="loading" *ngIf="loading">Loading Movies
+
+    </div>
+    <div class="movies-grid">
+        <div class="movie-card" *ngFor="let movie of movies">
+            <h2>{{ movie.title }}</h2>
+            <p>
+                {{ movie.body }}
+            </p>
+
+            <div class="buttons">
+                <button  (click)="editMovie(movie)">
+                    Edit
+                </button>
+                <button class="patch-btn" (click)="patchMovie(movie)">
+                    Patch
+                </button>
+
+                <button class="delete-btn" (click)="deleteMovie(movie.id)">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

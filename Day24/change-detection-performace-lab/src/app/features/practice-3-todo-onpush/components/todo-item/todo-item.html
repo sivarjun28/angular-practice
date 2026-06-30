@@ -1,0 +1,12 @@
+<div class="todo-item">
+  <span 
+    class="todo-text"
+    [class.completed]="todo.completed">
+    {{ todo.text }}
+  </span>
+
+  <div class="actions">
+    <button class="toggle-btn" (click)="toggle()">✔</button>
+    <button class="delete-btn" (click)="delete()">✖</button>
+  </div>
+</div>

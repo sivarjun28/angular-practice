@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  min-height: 50vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+  font-family: Arial, sans-serif;
+}
+h1{
+    color: #38bdf8;
+    text-align: center;
+}
+input,
+textarea,
+select {
+  width: 700px;
+  display: block;
+  margin: 20px auto;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+textarea {
+  height: 140px;
+  resize: none;
+}
+
+button {
+  display: block;
+  margin: 30px auto;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+}

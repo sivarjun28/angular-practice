@@ -1,0 +1,49 @@
+<div class="user-panel">
+
+  <div class="user-info">
+
+    <h2>Task Management Dashboard</h2>
+
+    <p>
+      Manage your tasks efficiently using Angular State Management
+    </p>
+
+  </div>
+
+  <div *ngIf="!(currentUser$ | async)"
+       class="login-section">
+
+    <input
+      type="text"
+      [(ngModel)]="username"
+      placeholder="Enter username">
+
+    <button
+      class="login-btn"
+      (click)="login()">
+
+      Login
+
+    </button>
+
+  </div>
+
+  <div *ngIf="currentUser$ | async as user">
+
+    <span class="welcome-text">
+
+      Welcome 👋 {{ user.username }}
+
+    </span>
+
+    <button
+      class="logout-btn"
+      (click)="logout()">
+
+      Logout
+
+    </button>
+
+  </div>
+
+</div>

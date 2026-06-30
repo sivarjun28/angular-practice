@@ -1,0 +1,83 @@
+<div class="dashboard">
+
+    <div class="dashboard-header">
+        <h1>👨‍💼 Employee Monitoring Dashboard</h1>
+        <p>
+            Monitor employee activity and observe Angular Lifecycle Hooks in action.
+        </p>
+    </div>
+
+    <div class="control-panel">
+
+        <h2>Parent Component Controls</h2>
+
+        <div class="button-group">
+
+            <button (click)="toggleEmployeeCard()">
+                {{ showEmployee ? 'Destroy Employee Card' : 'Load Employee Card' }}
+            </button>
+
+            <button (click)="changeEmployee()">
+                Switch Employee
+            </button>
+
+            <button (click)="clearLogs()">
+                Clear Logs
+            </button>
+
+        </div>
+
+        <div class="status-box">
+
+            <h3>Current Employee Status</h3>
+
+            <p>
+                <strong>Name:</strong>
+                {{ selectedEmployee.name }}
+            </p>
+
+            <p>
+                <strong>Department:</strong>
+                {{ selectedEmployee.department }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ selectedEmployee.status }}
+            </p>
+
+            <p>
+                <strong>Employee Card:</strong>
+                {{ showEmployee ? 'Active' : 'Destroyed' }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <app-employee-card *ngIf="showEmployee" [employee]="selectedEmployee" (alertEvent)="recieveAlert($event)">
+    </app-employee-card>
+
+    <div class="logs-section">
+
+        <h2>📋 Lifecycle Activity Logs</h2>
+
+        <div class="logs-container">
+
+            <div class="log-item" *ngFor="let log of logs">
+
+                {{ log }}
+
+            </div>
+
+            <div class="empty-log" *ngIf="logs.length === 0">
+
+                No logs available
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+.movies-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+}
+
+.movie-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    padding: 10px 20px;
+
+}
+
+.movie-card img {
+
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+
+    transform:
+        translateY(-8px);
+}
+
+.movie-card button {
+    width: 100%;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+}

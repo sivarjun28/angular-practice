@@ -1,0 +1,71 @@
+.settings-container {
+
+  max-width: 700px;
+
+  margin: auto;
+
+  padding: 30px;
+}
+
+.settings-container h1 {
+
+  margin-bottom: 30px;
+}
+
+.setting-card {
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08);
+}
+
+.setting-card button {
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.setting-card input[type="text"] {
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  border: 1px solid #cbd5e1;
+}
+
+.dark-theme {
+
+  background-color: #0f172a;
+
+  color: white;
+
+  border-radius: 20px;
+}
+
+.dark-theme .setting-card {
+
+  background-color: #1e293b;
+}

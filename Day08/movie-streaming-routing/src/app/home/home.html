@@ -1,0 +1,105 @@
+<div class="hero-section">
+
+    <div class="hero-overlay">
+
+        <h1>
+            Unlimited Movies,
+            TV Shows & More
+        </h1>
+
+        <p>
+            Watch trending entertainment
+            anytime anywhere.
+        </p>
+
+        <button>
+            ▶ Watch Now
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="section-header">
+
+    <h2>
+        Featured Movies
+    </h2>
+
+    <span>
+        {{ featuredMovies.length }}
+        Movies Available
+    </span>
+
+</div>
+
+
+<div class="movies-grid">
+
+    <div class="movie-card" *ngFor="
+      let movie of featuredMovies
+    ">
+
+
+        <img [src]="movie.image" [alt]="movie.title">
+
+
+        <div class="movie-content">
+
+            <h3>
+                {{ movie.title }}
+            </h3>
+
+            <p class="category">
+                {{ movie.category }}
+            </p>
+
+            <div class="movie-footer">
+
+                <span class="rating">
+
+                    ⭐ {{ movie.rating }}
+
+                </span>
+
+                <button>
+                    Details
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="trending-section">
+
+    <h2>
+        🔥 Trending Today
+    </h2>
+
+    <div class="trending-grid">
+
+        <div class="trend-box" *ngFor="
+                let movie of trendingMovies
+            ">
+
+            <img [src]="movie.image" [alt]="movie.title">
+
+            <h3>
+                {{ movie.title }}
+            </h3>
+
+            <p>
+                {{ movie.description }}
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

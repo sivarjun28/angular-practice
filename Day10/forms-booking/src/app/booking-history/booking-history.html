@@ -1,0 +1,30 @@
+<div class="history-container">
+    <h1>Booking History</h1>
+
+    <div class="booking-card" *ngFor="let booking of bookings">
+        <h2>
+            {{ booking.movie }}
+        </h2>
+
+        <p>
+            👤 {{ booking.name }}
+        </p>
+        <p>
+            📧 {{ booking.email }}
+        </p>
+
+        <p>
+            🎫 {{ booking.tickets }}
+            Tickets
+        </p>
+
+        <p>
+            💺 {{ booking.seatType }}
+        </p>
+
+    </div>
+
+    <button (click)="clear()">
+        Clear History
+    </button>
+</div>

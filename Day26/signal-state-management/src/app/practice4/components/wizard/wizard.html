@@ -1,0 +1,32 @@
+<div class="wizard-container">
+    <h1>📝 Multi Step Form</h1>
+    <div class="progress-section">
+        <p>Progress: {{ wizard.progress }}</p>
+        <div class="progress-bar">
+            <div
+                class="progress-fill"
+                [style.width.%]="wizard.progress">
+            </div>
+        </div>
+    </div>
+    <div class="step-container">
+        <div [ngSwitch]="wizard.currentStep()">
+            <app-step1 *ngSwitchCase="1"></app-step1>
+            <app-step2 *ngSwitchCase="2"></app-step2>
+            <app-step3 *ngSwitchCase="3"></app-step3>
+        </div>
+    </div>
+    <div class="button-section">
+        <button
+            class="back-btn"
+            (click)="wizard.prev()">
+            Back
+        </button>
+        <button
+            class="next-btn"
+            (click)="wizard.next()"
+            [disabled]="!wizard.isStepValid()">
+            Next
+        </button>
+    </div>
+</div>

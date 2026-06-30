@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+.search-container {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.product {
+    padding: 15px;
+    border: 1px solid #7e0c0c;
+    border-radius: 8px;
+}

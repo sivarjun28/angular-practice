@@ -1,0 +1,109 @@
+<div class="employee-card">
+
+    <div class="card-header">
+
+        <h2>👨‍💼 Employee Profile</h2>
+
+        <span class="status-badge">
+            {{ employee.status }}
+        </span>
+
+    </div>
+
+    <div class="info-card">
+
+        <h3>Employee Information</h3>
+
+        <div class="info-row">
+            <span>Employee ID</span>
+            <strong>{{ employee.id }}</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Name</span>
+            <strong>{{ employee.name }}</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Department</span>
+            <strong>{{ employee.department }}</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Status</span>
+            <strong>{{ employee.status }}</strong>
+        </div>
+
+    </div>
+
+    <div class="monitor-card">
+
+        <h3>⚡ Lifecycle Monitor</h3>
+
+        <div class="monitor-row">
+            <span>Latest Hook</span>
+            <strong>{{ currentHook }}</strong>
+        </div>
+
+        <div class="monitor-row">
+            <span>DoCheck Counter</span>
+            <strong>{{ doCheckCounter }}</strong>
+        </div>
+
+        <small>
+            Notice how ngDoCheck runs frequently during Angular change detection.
+        </small>
+
+    </div>
+
+    <div class="timer-card">
+
+        <h3>⏱ Component Activity Timer</h3>
+
+        <div class="timer-value">
+            {{ timerSeconds }}
+        </div>
+
+        <p>Seconds Active</p>
+
+        <small>
+            Timer starts in ngOnInit and stops in ngOnDestroy.
+        </small>
+
+    </div>
+
+    <div class="view-card">
+
+        <h3>👁 View Lifecycle Status</h3>
+
+        <div class="monitor-row">
+            <span>View Initialized</span>
+            <strong>
+                {{ viewInitialized ? 'Yes' : 'No' }}
+            </strong>
+        </div>
+
+        <div class="monitor-row">
+            <span>Initialization Time</span>
+            <strong>{{ viewInitTime }}</strong>
+        </div>
+
+        <small>
+            ngAfterViewInit runs once after Angular finishes rendering the component view.
+        </small>
+
+    </div>
+
+    <div class="action-card">
+
+        <button
+            class="alert-btn"
+            (click)="sendAlert()">
+
+            Send Alert To Parent
+
+        </button>
+
+    </div>
+
+</div>

@@ -1,0 +1,410 @@
+<div class="form-container">
+
+    <form
+
+      [formGroup]="applicationForm"
+
+      (ngSubmit)="onSubmit()"
+
+    >
+
+        <h1>
+            💼 Job Application
+        </h1>
+
+        <!-- FIRST NAME -->
+
+        <label>
+            First Name
+        </label>
+
+        <input
+          type="text"
+          formControlName="firstName"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('firstName')
+            ?.invalid &&
+
+            applicationForm
+            .get('firstName')
+            ?.touched
+          "
+
+        >
+
+          First name must
+          contain minimum 3 characters
+
+        </small>
+
+        <!-- LAST NAME -->
+
+        <label>
+            Last Name
+        </label>
+
+        <input
+          type="text"
+          formControlName="lastName"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('lastName')
+            ?.invalid &&
+
+            applicationForm
+            .get('lastName')
+            ?.touched
+          "
+
+        >
+
+          Last name required
+
+        </small>
+
+        <!-- EMAIL -->
+
+        <label>
+            Email
+        </label>
+
+        <input
+          type="email"
+          formControlName="email"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('email')
+            ?.invalid &&
+
+            applicationForm
+            .get('email')
+            ?.touched
+          "
+
+        >
+
+          Enter valid email
+
+        </small>
+
+        <!-- PHONE -->
+
+        <label>
+            Phone Number
+        </label>
+
+        <input
+          type="text"
+          formControlName="phone"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('phone')
+            ?.errors?.['pattern']
+            &&
+
+            applicationForm
+            .get('phone')
+            ?.touched
+          "
+
+        >
+
+          Phone number must
+          contain 10 digits
+
+        </small>
+
+        <!-- AGE -->
+
+        <label>
+            Age
+        </label>
+
+        <input
+          type="number"
+          formControlName="age"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('age')
+            ?.invalid &&
+
+            applicationForm
+            .get('age')
+            ?.touched
+          "
+
+        >
+
+          Age should be
+          between 18 and 60
+
+        </small>
+
+        <!-- ROLE -->
+
+        <label>
+            Job Role
+        </label>
+
+        <select
+          formControlName="role"
+        >
+
+            <option value="">
+                Select Role
+            </option>
+
+            <option>
+                Frontend Developer
+            </option>
+
+            <option>
+                Backend Developer
+            </option>
+
+            <option>
+                Full Stack Developer
+            </option>
+
+            <option>
+                UI/UX Designer
+            </option>
+
+        </select>
+
+        <!-- EXPERIENCE -->
+
+        <label>
+            Experience
+        </label>
+
+        <input
+          type="text"
+          formControlName="experience"
+        >
+
+        <!-- SKILLS -->
+
+        <label>
+            Skills
+        </label>
+
+        <input
+          type="text"
+          formControlName="skills"
+        >
+
+        <!-- PORTFOLIO -->
+
+        <label>
+            Portfolio URL
+        </label>
+
+        <input
+          type="text"
+          formControlName="portfolio"
+        >
+
+        <!-- BIO -->
+
+        <label>
+            Bio
+        </label>
+
+        <textarea
+          formControlName="bio"
+        ></textarea>
+
+        <small>
+
+            {{
+              applicationForm
+              .get('bio')
+              ?.value?.length || 0
+            }}/200
+
+        </small>
+
+        <!-- PASSWORD -->
+
+        <label>
+            Password
+        </label>
+
+        <input
+          type="password"
+          formControlName="password"
+        >
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('password')
+            ?.invalid &&
+
+            applicationForm
+            .get('password')
+            ?.touched
+          "
+
+        >
+
+          Password must contain
+          minimum 6 characters
+
+        </small>
+
+        <!-- CONFIRM PASSWORD -->
+
+        <label>
+            Confirm Password
+        </label>
+
+        <input
+          type="password"
+          formControlName="confirmPassword"
+        >
+
+        <small
+
+          *ngIf="
+
+            applicationForm.errors?.[
+              'passwordMismatch'
+            ]
+
+            &&
+
+            applicationForm
+            .get('confirmPassword')
+            ?.touched
+
+          "
+
+        >
+
+          Passwords do not match
+
+        </small>
+
+        <!-- TERMS -->
+
+        <div class="checkbox">
+
+            <input
+              type="checkbox"
+              formControlName="terms"
+            >
+
+            <span>
+                Accept Terms & Conditions
+            </span>
+
+        </div>
+
+        <small
+
+          *ngIf="
+            applicationForm
+            .get('terms')
+            ?.invalid &&
+
+            applicationForm
+            .get('terms')
+            ?.touched
+          "
+
+        >
+
+          Please accept terms
+
+        </small>
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <button
+
+              type="submit"
+
+              [disabled]="
+                applicationForm.invalid
+              "
+
+            >
+
+              Submit Application
+
+            </button>
+
+            <button
+
+              type="button"
+
+              (click)="resetForm()"
+
+            >
+
+              Reset
+
+            </button>
+
+        </div>
+
+    </form>
+
+    <!-- LIVE JSON -->
+
+    <div class="preview">
+
+        <h2>
+            Live Form Data
+        </h2>
+
+        <pre>
+{{
+applicationForm.value
+| json
+}}
+        </pre>
+
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div
+
+      class="success"
+
+      *ngIf="submitted"
+
+    >
+
+      ✅ Application Submitted Successfully
+
+    </div>
+
+</div>

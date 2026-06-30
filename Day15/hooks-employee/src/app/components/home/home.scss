@@ -1,0 +1,49 @@
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 20px;
+}
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon {
+    font-size: 80px;
+}
+
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card a:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5a6de0, #6a4190);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.8;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}

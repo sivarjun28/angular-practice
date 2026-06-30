@@ -1,0 +1,36 @@
+<div class="details-container" *ngIf="movie">
+    <div class="details-content">
+         <img [src]="movie.image">
+
+        <h1>
+            {{ movie.title }}
+        </h1>
+
+        <p>
+            {{ movie.description }}
+        </p>
+
+        <h3>
+            Category:
+            {{ category }}
+        </h3>
+
+        <h3>
+            ⭐ {{ movie.rating }}
+        </h3>
+
+        <button (click)="goBack()">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</div>
+
+<div *ngIf="!movie" class="error-box">
+
+    Movie Not Found
+
+</div>

@@ -1,0 +1,14 @@
+<h2>Manage Products</h2>
+
+<div class="add-form">
+    <input [(ngModel)]="newProduct.title" placeholder="Product name">
+    <input type="number" [(ngModel)]="newProduct.price" placeholder="Price">
+    <button (click)="addProduct()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let p of products()">
+        {{ p.title }} - ${{ p.price }}
+        <button (click)="deleteProduct(p.id)">Delete</button>
+    </li>
+</ul>

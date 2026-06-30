@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="title">Product List</h1>
+
+    <button class="update-btn" (click)="updateFirst()">
+        Update First Product
+    </button>
+
+    <div class="grid">
+        <app-product-item *ngFor="let product of products; trackBy: trackById" [product]="product"
+            (buy)="onBuy($event)">
+        </app-product-item>
+    </div>
+</div>

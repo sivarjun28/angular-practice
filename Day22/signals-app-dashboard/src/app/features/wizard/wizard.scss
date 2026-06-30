@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+.wizard-container {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+input {
+    padding: 12px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

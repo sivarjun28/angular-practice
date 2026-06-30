@@ -1,0 +1,17 @@
+<h1>Notes List</h1>
+<input placeholder="Search..." (input)="notesService.searchTerm.set($any($event.target).value)" />
+
+<select (change)="notesService.selectedCategory.set($any($event.target).value)">
+    <option value="">All</option>
+    <option value="work">Work</option>
+    <option value="personal">Personal</option>
+</select>
+
+<div *ngFor="let note of notesService.filteredNotes()">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <small>{{ note.category }}</small>
+
+    <button   (click)="delete(note.id)">Delete</button>
+    <button  (click)="edit(note)">Edit Note</button>
+</div>

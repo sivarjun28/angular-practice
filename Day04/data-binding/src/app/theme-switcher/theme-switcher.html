@@ -1,0 +1,21 @@
+<div class="theme-container" [class.dark-theme]="isDarkMode">
+
+    <div class="card">
+
+        <h1>
+            {{ isDarkMode ? 'Dark Theme 🌙' : 'Light Theme ☀️' }}
+        </h1>
+
+        <p>
+            Angular Theme Switcher Practice
+        </p>
+
+        <button (click)="toggleTheme()">
+
+            {{ isDarkMode ? 'Switch to Light' : 'Switch to Dark' }}
+
+        </button>
+
+    </div>
+
+</div>

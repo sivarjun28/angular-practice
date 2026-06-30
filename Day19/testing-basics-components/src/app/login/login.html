@@ -1,0 +1,29 @@
+<div class="login-container">
+
+  <h2>Login Component Testing</h2>
+
+  <p>
+    This component demonstrates Angular form testing,
+    validation testing, button state testing, and
+    EventEmitter testing using Jasmine and TestBed.
+  </p>
+
+  <input
+    type="text"
+    placeholder="Username"
+    [(ngModel)]="username">
+
+  <input
+    type="password"
+    placeholder="Password"
+    [(ngModel)]="password">
+
+  <button
+    (click)="submit()"
+    [disabled]="!username || !password">
+
+    Login
+
+  </button>
+
+</div>

@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eef2f7;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+.product-page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px 25px;
+}
+
+.top-bar {
+    margin-bottom: 35px;
+}
+
+.top-bar h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    background: #fff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.filters input[type=text],
+.filters select {
+    flex: 1;
+    min-width: 230px;
+    padding: 14px 16px;
+    border: 1px solid #d6dbe3;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #f9fafb;
+    outline: none;
+    transition: .3s;
+}
+
+.filters input[type=text]:focus,
+.filters select:focus {
+    border-color: #2563eb;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(37, 99, 235, .18);
+}
+
+.price-filter {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.price-filter label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.price-filter input[type=range] {
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 35px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+    transition: .35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .15);
+}
+
+.image-box {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(#fafafa, #f1f5f9);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .35s;
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #1f2937;
+    height: 52px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #16a34a;
+    margin-bottom: 14px;
+}
+
+.description {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.buttons button,
+.buttons a {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buttons button {
+    background: #2563eb;
+    color: #fff;
+}
+
+.buttons button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.buttons a {
+    background: #10b981;
+    color: #fff;
+}
+
+.buttons a:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 40px;
+}
+
+.error {
+    color: #dc2626;
+}

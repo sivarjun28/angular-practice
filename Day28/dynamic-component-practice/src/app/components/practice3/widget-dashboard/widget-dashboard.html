@@ -1,0 +1,19 @@
+<h2>📊 Widget Dashboard</h2>
+
+<button (click)="addWidget1()">➕ Add Widget 1</button>
+<button (click)="addWidget2()">➕ Add Widget 2</button>
+
+<div class="dashboard">
+
+  <div class="widget" *ngFor="let widget of widgets">
+
+    <div class="header">
+      {{widget.title}}
+      <button (click)="remove(widget.id)">❌</button>
+    </div>
+
+    <ng-container *ngComponentOutlet="widget.component"></ng-container>
+
+  </div>
+
+</div>

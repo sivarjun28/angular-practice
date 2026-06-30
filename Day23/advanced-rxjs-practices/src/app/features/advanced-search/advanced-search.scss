@@ -1,0 +1,101 @@
+.search-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fa;
+    padding: 40px;
+
+}
+
+.search-card {
+
+    width: 800px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.subtitle {
+    text-align: center;
+    color: gray;
+    margin-bottom: 25px;
+
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+
+}
+
+.search-box input:focus {
+    border-color: #2563eb;
+
+}
+
+.loading {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.error {
+    margin-top: 20px;
+    color: red;
+    text-align: center;
+
+}
+
+.empty {
+    margin-top: 20px;
+    text-align: center;
+    color: gray;
+
+}
+
+.results {
+    margin-top: 25px;
+}
+
+.employee-card {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+}
+
+.employee-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.employee-info h3 {
+    margin: 0;
+}
+
+.employee-info p {
+
+    margin: 5px 0;
+    color: #555;
+
+}

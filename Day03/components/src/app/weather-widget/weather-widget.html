@@ -1,0 +1,28 @@
+<div class="weather-card">
+    <h1>Weather Widget</h1>
+    <h2>{{ location }}</h2>
+
+    <div class="current-weather">
+        <div class="icon">
+            {{ weatherIcon }}
+        </div>
+
+        <div>
+            <h1>{{ currentTemp }}°C </h1>
+
+            <p>{{ condition }}</p>
+        </div>
+    </div>
+
+    <h3>5-Day Forecast</h3>
+    <div class="forecast-container">
+        <div class="forecast-tem" *ngFor="let item of forecast">
+            <h4>{{ item.day }}</h4>
+
+            <div class="forecast-icon">
+                {{ item.condition }}
+            </div>
+            <p>{{ item.temp }}°C</p>
+        </div>
+    </div>
+</div>

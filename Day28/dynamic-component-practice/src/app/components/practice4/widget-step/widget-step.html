@@ -1,0 +1,22 @@
+<h2>🧭 Dynamic Wizard</h2>
+
+<div>
+    Step {{ currentIndex + 1 }} / {{ stepsConfig.length }}
+    - {{ stepsConfig[currentIndex].title }}
+</div>
+
+<hr>
+<ng-template #container></ng-template>
+<hr>
+
+<button (click)="prev()" [disabled]="currentIndex === 0">
+    ⬅ Previous
+</button>
+
+<button *ngIf="currentIndex < stepsConfig.length - 1" (click)="next()">
+    Next ➡
+</button>
+
+<button *ngIf="currentIndex === stepsConfig.length - 1" (click)="submit()">
+    ✅ Submit
+</button>

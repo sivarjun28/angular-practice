@@ -1,0 +1,24 @@
+<div class="product-card">
+
+  <img
+    [src]="productImage"
+    alt="Product Image"
+  />
+
+  <h2>{{ productName }}</h2>
+
+  <h3>₹ {{ price }}</h3>
+
+  <div class="rating">
+
+    <span *ngFor="let star of rating">
+      ⭐
+    </span>
+
+  </div>
+
+  <button (click)="addToCart()">
+    Add To Cart
+  </button>
+
+</div>
