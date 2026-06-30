@@ -1,122 +1,78 @@
-.profile-container {
-
-    max-width: 900px;
-
-    margin: auto;
+.profile-container{
+max-width:900px;
+margin:auto;
 }
 
-.profile-card {
-
-    background: white;
-
-    padding: 40px;
-
-    border-radius: 25px;
-
-    text-align: center;
-
-    box-shadow:
-        0 5px 18px rgba(0, 0, 0, 0.1);
-
-    margin-bottom: 40px;
+.profile-card{
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 5px 18px rgba(0,0,0,.1);
+margin-bottom:40px;
 }
 
-.profile-card img {
-
-    width: 160px;
-
-    height: 160px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    margin-bottom: 20px;
-
-    border: 5px solid #2563eb;
+.profile-card img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:20px;
+border:5px solid #2563eb;
 }
 
-.profile-card h1 {
-
-    font-size: 38px;
-
-    margin-bottom: 10px;
+.profile-card h1{
+font-size:38px;
+margin-bottom:10px;
 }
 
-.bio {
-
-    color: #64748b;
-
-    margin-bottom: 25px;
-
-    font-size: 18px;
+.bio{
+color:#64748b;
+margin-bottom:25px;
+font-size:18px;
 }
 
 .follow-btn,
-.unfollow-btn {
-
-    padding: 12px 28px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    color: white;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    margin-bottom: 30px;
+.unfollow-btn{
+padding:12px 28px;
+border:none;
+border-radius:12px;
+color:white;
+cursor:pointer;
+font-size:16px;
+margin-bottom:30px;
 }
 
-.follow-btn {
-
-    background-color: #2563eb;
+.follow-btn{
+background-color:#2563eb;
 }
 
-.unfollow-btn {
-
-    background-color: crimson;
+.unfollow-btn{
+background-color:crimson;
 }
 
-.stats {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
 }
 
-.stat-box {
-
-    background: #f8fafc;
-
-    padding: 20px;
-
-    border-radius: 16px;
-
-    min-width: 120px;
+.stat-box{
+background:#f8fafc;
+padding:20px;
+border-radius:16px;
+min-width:120px;
 }
 
-.social-section h2 {
-
-    margin-bottom: 25px;
+.social-section h2{
+margin-bottom:25px;
 }
 
-.social-card {
-
-    background: white;
-
-    padding: 20px;
-
-    border-radius: 16px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.08);
+.social-card{
+background:white;
+padding:20px;
+border-radius:16px;
+margin-bottom:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
