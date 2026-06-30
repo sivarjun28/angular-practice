@@ -1,190 +1,98 @@
 .cart-container {
-
   width: 360px;
-
   background: white;
-
   border-radius: 24px;
-
   padding: 25px;
-
   box-shadow:
     0 8px 25px rgba(0,0,0,0.1);
-
   position: sticky;
-
   margin-top: 90px;
 }
-
-/* Heading */
-
 .cart-container h2 {
-
   font-size: 30px;
-
   margin-bottom: 25px;
-
   color: #0f172a;
-
   text-align: center;
 }
-
-/* Empty Cart */
-
 .cart-container p {
-
   text-align: center;
-
   color: #64748b;
 }
-
-/* Cart Item */
-
 .cart-item {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   background: #f8fafc;
-
   border-radius: 16px;
-
   padding: 15px;
-
   margin-bottom: 15px;
-
   transition: 0.3s ease;
 }
-
 .cart-item:hover {
-
   transform: translateX(5px);
-
   background: #eff6ff;
 }
-
-/* Product Name */
-
 .cart-item h3 {
-
   font-size: 18px;
-
   margin-bottom: 5px;
-
   color: #0f172a;
 }
-
-/* Product Price */
-
 .cart-item p {
-
   color: #2563eb;
-
   font-size: 17px;
-
   font-weight: bold;
-
   text-align: left;
 }
 
-/* Remove Button */
 
 .remove-btn {
-
   padding: 10px 14px;
-
   border: none;
-
   border-radius: 10px;
-
   background: crimson;
-
   color: white;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .remove-btn:hover {
-
   background: #b91c1c;
-
   transform: scale(1.05);
 }
-
-/* Total Section */
-
 .total-price {
-
   margin-top: 20px;
-
   padding-top: 20px;
-
   border-top: 2px solid #e2e8f0;
-
   font-size: 24px;
-
   font-weight: bold;
-
   color: #0f172a;
-
   text-align: center;
 }
 
-/* Clear Button */
-
 .clear-btn {
-
   width: 100%;
-
   margin-top: 20px;
-
   padding: 14px;
-
   border: none;
-
   border-radius: 14px;
-
   background:
     linear-gradient(
       to right,
       #0f172a,
       #1e293b
     );
-
   color: white;
-
   font-size: 16px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s ease;
 }
-
 .clear-btn:hover {
-
   transform: scale(1.02);
-
   background:
     linear-gradient(
       to right,
       #020617,
       #0f172a
     );
-}
-
-/* Responsive */
-
-@media (max-width: 1000px) {
-
-  .cart-container {
-
-    width: 100%;
-  }
 }
