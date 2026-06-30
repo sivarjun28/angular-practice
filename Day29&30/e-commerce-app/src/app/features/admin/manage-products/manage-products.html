@@ -1,14 +1,60 @@
-<h2>Manage Products</h2>
+<section class="admin-page">
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Catalog management</p>
+            <h2>Manage products</h2>
+            <p class="description">Keep the storefront up to date with new releases, pricing updates, and inventory
+                changes.</p>
+        </div>
+    </div>
 
-<div class="add-form">
-    <input [(ngModel)]="newProduct.title" placeholder="Product name">
-    <input type="number" [(ngModel)]="newProduct.price" placeholder="Price">
-    <button (click)="addProduct()">Add</button>
-</div>
+    <app-loading-spinner [loading]="loading()"></app-loading-spinner>
 
-<ul>
-    <li *ngFor="let p of products()">
-        {{ p.title }} - ${{ p.price }}
-        <button (click)="deleteProduct(p.id)">Delete</button>
-    </li>
-</ul>
+    @if (!loading()) {
+    <div class="content-grid">
+        <form class="panel" (ngSubmit)="addProduct()">
+            <h3>Add a product</h3>
+            <label>
+                Product name
+                <input [(ngModel)]="newProduct.title" name="title" placeholder="Product title" />
+            </label>
+            <label>
+                Category
+                <input [(ngModel)]="newProduct.category" name="category" placeholder="Category" />
+            </label>
+            <label>
+                Price
+                <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="Price" />
+            </label>
+            <label>
+                Stock
+                <input type="number" [(ngModel)]="newProduct.stock" name="stock" placeholder="Stock" />
+            </label>
+            <button type="submit">Add product</button>
+        </form>
+
+        <div class="panel">
+            <div class="panel-header">
+                <h3>Current inventory</h3>
+                <span>{{ products().length }} products</span>
+            </div>
+
+            <div class="inventory-list">
+                @for (product of products(); track product.id) {
+                <article class="inventory-row">
+                    <div>
+                        <strong>{{ product.title }}</strong>
+                        <p>{{ product.category }} • {{ product.stock }} in stock</p>
+                    </div>
+                    <div class="inventory-actions">
+                        <span class="status">{{ product.status }}</span>
+                        <strong>${{ product.price }}</strong>
+                        <button type="button" (click)="deleteProduct(product.id)">Remove</button>
+                    </div>
+                </article>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</section>

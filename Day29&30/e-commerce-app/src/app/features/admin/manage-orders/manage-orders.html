@@ -1,8 +1,37 @@
-<h2>Manage Orders</h2>
+<section class="admin-page">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Order operations</p>
+      <h2>Manage orders</h2>
+      <p class="description">Track the latest orders, fulfillment status, and customer demand in real time.</p>
+    </div>
+  </div>
 
-<ul>
-    <li *ngFor="let o of orders()">
-        Order #{{ o.id }} - {{ o.user }} - ${{ o.total }}
-        <button (click)="deleteOrder(o.id)">Delete</button>
-    </li>
-</ul>
+  <app-loading-spinner [loading]="loading()"></app-loading-spinner>
+
+  @if (!loading()) {
+    <div class="panel">
+      <div class="panel-header">
+        <h3>Recent orders</h3>
+        <span>{{ orders().length }} open orders</span>
+      </div>
+
+      <div class="order-list">
+        @for (order of orders(); track order.id) {
+          <article class="order-row">
+            <div>
+              <strong>Order #{{ order.id }}</strong>
+              <p>{{ order.customer }} • {{ order.items }} item(s)</p>
+            </div>
+            <div class="order-meta">
+              <span class="status">{{ order.status }}</span>
+              <strong>${{ order.total }}</strong>
+              <small>{{ order.date }}</small>
+              <button type="button" (click)="deleteOrder(order.id)">Remove</button>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  }
+</section>

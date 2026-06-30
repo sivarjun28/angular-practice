@@ -1,6 +1,71 @@
-<h2>Admin Dashboard</h2>
+<section class="dashboard-shell">
+  <div class="dashboard-header">
+    <div>
+      <p class="eyebrow">Operations center</p>
+      <h2>Admin dashboard</h2>
+      <p class="description">Monitor catalog performance, inventory health, and daily business activity from one place.</p>
+    </div>
+    <button class="refresh-btn" type="button" (click)="refreshDashboard()">Refresh</button>
+  </div>
 
-<div class="admin-links">
-    <a routerLink="/admin/products">Manage Products</a>
-    <a routerLink="/admin/orders">Manage Orders</a>
-</div>
+  <app-loading-spinner [loading]="loading()"></app-loading-spinner>
+
+  @if (!loading()) {
+    <div class="stats-grid">
+      @for (metric of metrics(); track metric.title) {
+        <article class="stat-card" [class]="metric.accent">
+          <p>{{ metric.title }}</p>
+          <h3>{{ metric.value }}</h3>
+          <span>{{ metric.detail }}</span>
+        </article>
+      }
+    </div>
+
+    <div class="content-grid">
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Inventory overview</h3>
+          <span>Last synced {{ lastSynced() }}</span>
+        </div>
+        <div class="inventory-list">
+          @for (item of inventory(); track item.title) {
+            <div class="inventory-item">
+              <div>
+                <strong>{{ item.title }}</strong>
+                <p>{{ item.stock }}</p>
+              </div>
+              <span>{{ item.price }}</span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Recent activity</h3>
+          <a routerLink="/admin/orders">Open orders</a>
+        </div>
+        <ul class="activity-list">
+          @for (activity of activities(); track activity.title) {
+            <li>
+              <div>
+                <strong>{{ activity.title }}</strong>
+                <p>{{ activity.detail }}</p>
+              </div>
+              <div class="activity-meta">
+                <span>{{ activity.status }}</span>
+                <small>{{ activity.time }}</small>
+              </div>
+            </li>
+          }
+        </ul>
+      </section>
+    </div>
+
+    <div class="quick-actions">
+      <a routerLink="/admin/products" class="action-card">Manage products</a>
+      <a routerLink="/admin/orders" class="action-card">Review orders</a>
+      <a routerLink="/products" class="action-card">View storefront</a>
+    </div>
+  }
+</section>
